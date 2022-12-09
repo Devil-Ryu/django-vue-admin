@@ -1,10 +1,9 @@
 import hashlib
 import os
 
+from application import dispatch
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
-from application import dispatch
 from dvadmin.utils.models import CoreModel, table_prefix
 
 STATUS_CHOICES = (
