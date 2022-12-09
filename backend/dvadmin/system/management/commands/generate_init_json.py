@@ -4,15 +4,14 @@ import os
 
 import django
 from django.db.models import QuerySet
-
 from dvadmin.system.views.system_config import SystemConfigInitSerializer
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'application.settings')
 django.setup()
-from django.core.management.base import BaseCommand
-
 from application.settings import BASE_DIR
-from dvadmin.system.models import Menu, Users, Dept, Role, ApiWhiteList, Dictionary, SystemConfig
+from django.core.management.base import BaseCommand
+from dvadmin.system.models import (ApiWhiteList, Dept, Dictionary, Menu, Role,
+                                   SystemConfig, Users)
 from dvadmin.system.views.api_white_list import ApiWhiteListInitSerializer
 from dvadmin.system.views.dept import DeptInitSerializer
 from dvadmin.system.views.dictionary import DictionaryInitSerializer

@@ -10,10 +10,9 @@ import os
 
 import django
 import pypinyin
+from application import dispatch
 from django.core.management import BaseCommand
 from django.db import connection
-
-from application import dispatch
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'application.settings')
 django.setup()
@@ -71,8 +70,7 @@ class Command(BaseCommand):
         print(f"正在准备初始化省份数据...")
 
         if dispatch.is_tenants_mode():
-            from django_tenants.utils import get_tenant_model
-            from django_tenants.utils import tenant_context
+            from django_tenants.utils import get_tenant_model, tenant_context
             for tenant in get_tenant_model().objects.exclude(schema_name='public'):
                 with tenant_context(tenant):
                     print(f"租户[{connection.tenant.schema_name}]初始化数据开始...")
