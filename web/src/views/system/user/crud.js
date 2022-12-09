@@ -2,7 +2,7 @@ import { request } from '@/api/service'
 import util from '@/libs/util'
 
 export const crudOptions = (vm) => {
-  util.filterParams(vm, ['dept_name', 'role_info{name}', 'dept_name_all'])
+  // util.filterParams(vm, ['dept_name', 'role_info{name}', 'dept_name_all'])
   return {
     pageOptions: {
       compact: true
