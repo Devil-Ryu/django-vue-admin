@@ -81,7 +81,8 @@ urlpatterns = (
             path("api/init/dictionary/", InitDictionaryViewSet.as_view()),
             path("api/init/settings/", InitSettingsViewSet.as_view()),
             path("apiLogin/", ApiLogin.as_view()),
-            path('', include('itsm_app.urls'))
+            path('', include('itsm_app.urls')),
+            path(r'api/dvadmin_celery/', include('dvadmin_celery.urls')),
         ]
         + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
         + static(settings.STATIC_URL, document_root=settings.STATIC_URL)

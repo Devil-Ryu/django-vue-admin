@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 import sys
 from pathlib import Path
+# from dvadmin_celery import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -59,6 +60,9 @@ INSTALLED_APPS = [
     "captcha",
     'channels',
     'itsm_app',
+    # 'django_celery_beat',
+    # 'django_celery_results',
+    # 'dvadmin_celery',
 ]
 
 MIDDLEWARE = [
@@ -398,6 +402,6 @@ PLUGINS_URL_PATTERNS = []
 # ********** 一键导入插件配置开始 **********
 # 例如:
 # from dvadmin_upgrade_center.settings import *    # 升级中心
-# from dvadmin_celery.settings import *            # celery 异步任务
+from dvadmin_celery.settings import *            # celery 异步任务
 # ...
 # ********** 一键导入插件配置结束 **********
